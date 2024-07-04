@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="num1">
+    <input type="text" name="" id="num2">
+    <button onclick="view()">Add</button>
+    <button onclick="viewSub()">Subtract</button>
+    <button onclick="viewPrdct()">Multiply</button>
+    <button onclick="viewQuotient()">Divide</button>
+    <h2 id="result">Result: </h2>
+
+
+    <script>
+        let view=()=>{
+            let a=parseFloat(document.getElementById('num1').value)
+            let b=parseFloat(document.getElementById('num2').value)
+            let c=a+b
+            document.getElementById('result').innerHTML += c
+        }
+        let viewSub=()=>{
+            let a=parseFloat(document.getElementById('num1').value)
+            let b=parseFloat(document.getElementById('num2').value)
+            let d=a-b
+            document.getElementById('result').innerHTML += d
+        }
+        let viewPrdct=()=>{
+            let a=parseFloat(document.getElementById('num1').value)
+            let b=parseFloat(document.getElementById('num2').value)
+            let p=a*b
+            document.getElementById('result').innerHTML += p
+        }
+        let viewQuotient=()=>{
+            let a=parseFloat(document.getElementById('num1').value)
+            let b=parseFloat(document.getElementById('num2').value)
+            let q=a/b
+            document.getElementById('result').innerHTML += q
+        }
+    </script>
+</body>
+</html>
