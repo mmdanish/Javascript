@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: black;
+        text-align: center;
+        padding: 20px;
+        color: whitesmoke;
+    }
+    input{
+        border: 0;
+        padding: 10px;
+    }
+    button{
+        padding: 10px;
+        border-radius: 15px;
+        border: 0;
+        cursor: pointer;
+        background-color: bisque;
+    }
+</style>
+<body>
+    <h1>Arithematic Calculator</h1>
+    <input type="text" name="" id="num1" placeholder="Enter the first Number"><br><br>
+    <input type="text" name="" id="num2" placeholder="Enter the second Number"><br><br><br>
+    <button onclick="view('add')">Add</button>
+    <button onclick="view('sub')">Subtract</button>
+    <button onclick="view('multiply')">Multiply</button>
+    <button onclick="view('divide')">Divide</button><br>
+    <h2 id="result">Result: </h2>
+
+    <script>
+        let view=(x)=>{
+            let c='';
+            let a=parseFloat(document.getElementById('num1').value)
+            let b=parseFloat(document.getElementById('num2').value)
+            if(!a || !b){
+                alert('Please enter the values');
+            }
+            else{
+                switch (x) {
+                    case 'add':
+                        c = a + b
+                        break;
+                    case 'sub':
+                        c = a - b
+                        break;
+                    case 'multiply':
+                        c = a * b
+                        break;
+                    case 'divide':
+                        c = a / b
+                        break;                    
+                }
+            }
+            document.getElementById('result').innerHTML += c
+        }
+    </script>
+</body>
+</html>
