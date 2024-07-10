@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Excerises
+        //Qs1
+        console.log("Check whether an 'input' is a string or not");
+        let is_string = (input)=>{
+            if (Object.prototype.toString.call(input) === '[object String]')
+                return true;
+            else
+                return false;
+        };
+
+        console.log(is_string("Danish"));
+        console.log(is_string([1, 3, 23, 4]));
+
+        //Qs2
+        console.log("Check whether a string is blank or not");
+        let is_Blank = (input)=>{
+            if(input.length === 0)
+                return true;
+            else
+                return false;
+        }
+
+        console.log(is_Blank(''));
+        console.log(is_Blank('hello'));
+
+        //Qs3
+        console.log("Split a string and convert it into an array of words");
+        let string_to_array = (str)=>{
+            return str.trim().split(" ")
+        };
+
+        console.log(string_to_array("Mohammed Danish"));
+    </script>
+</body>
+</html>
