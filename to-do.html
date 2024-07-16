@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        text-align: center;
+    }
+    h1 {
+        font-style: italic;
+    }
+
+    input[type=text] {
+        appearance: none;
+        border: 1px solid;
+        outline: none;
+        border-bottom: .2em solid #E91E63;
+        border-radius: .2em .2em 0 0;
+        padding: .4em;
+        width: 15%;
+        color: #E91E63;  
+    }
+
+    #addBtn {
+        appearance: none;
+        border: .2em solid #E91E63;
+        background: hsl(0 0 0/0);
+        padding: .50em 1.5em;
+        margin-left: 10px;
+        color: #E91E63;
+        cursor: pointer;
+        border-radius: 2em;
+        transition: 1s;
+        &:hover, &:focus, &:active {
+		background: #E91E63;
+		color: #fff;
+	    }
+    }
+
+    button {
+        appearance: none;
+        border: .2em solid #E91E63;
+        background: hsl(0 0 0/0);
+        padding: .30em 1em;
+        margin-left: 50px;
+        color: #E91E63;
+        cursor: pointer;
+        transition: 1s;
+        &:hover, &:focus, &:active {
+		background: #E91E63;
+		color: #fff;
+	    }
+    }
+
+    p {
+        color: #E91E63;
+    }
+
+    .completed {
+        text-decoration: line-through;
+        color: #E91E63;
+    }
+
+    #newPara {
+            margin-top: 2.5em;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5em;
+            align-items: center;
+        }
+
+    #newPara p {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #E91E63;
+        font-size: 1.35em;
+        width: 100%;
+        max-width: 200px;
+    }
+
+    #inputContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+        margin-top:2em;
+        margin-bottom: 1em;
+    }
+
+</style>
+<body>
+    <h1>TO-DO List</h3>
+    <div id="inputContainer">
+        <input type="text" name="" id="myInput">
+        <button id="addBtn" onclick="add()">Add</button>
+    </div>
+    <div id="newPara"></div>
+    
+
+    <script>
+       let add = () => {
+           let myInput = document.getElementById('myInput').value
+           console.log(myInput); 
+
+           if (myInput === '') {
+                alert("You must write something!");
+                return;
+            }
+
+           let newElement = document.createElement('p')
+            console.log(newElement);
+
+            
+           let textNode = document.createElement('span');
+            textNode.textContent = myInput;
+            textNode.addEventListener('click', () => {
+                textNode.classList.toggle('completed');
+            });
+            newElement.appendChild(textNode);
+
+           let delBtn = document.createElement('Button')
+           newElement.appendChild(delBtn)
+
+           let btnText = document.createTextNode('\u00D7')
+           delBtn.appendChild(btnText)
+
+           delBtn.addEventListener("click",()=>{
+           newElement.remove();
+           });
+
+           let newDiv = document.getElementById('newPara')
+            newDiv.appendChild(newElement)
+
+            document.getElementById('myInput').value = "";   
+           
+       }
+
+    </script>
+</body>
+</html>
