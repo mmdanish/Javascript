@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3><i>Area of Rectangle</i></h3>
+    <input type="text" name="" id="length" placeholder="Enter the length"> &nbsp;&nbsp;&nbsp;
+    <input type="text" name="" id="breadth" placeholder="Enter the breadth"> &nbsp;&nbsp;
+    <button onclick="rectangle()">Enter</button>
+    <p id="rectangle"></p>
+    <br><br>
+    <h3><i>Area of Circle</i></h3>
+    <input type="text" name="" id="radius" placeholder="Enter the radius"> &nbsp;&nbsp;
+    <button onclick="circle()">Enter</button>
+    <p id="result"></p>
+    <script>
+        function rectangle() {
+            let l = document.getElementById('length').value;
+            let b = document.getElementById('breadth').value;
+
+            if(!l || !b){
+                alert("Enter a value!");
+            }else{
+                function Area(l) {
+                    return function(b){
+                        return l * b;
+                    }
+                }
+            }
+            let result = Area(l)(b);
+            document.getElementById('rectangle').innerHTML = "<b>Area: <b>" + result;
+        };
+
+        let circle = () => {
+            var r = document.getElementById('radius').value;
+
+            if(!r){
+                alert("Enter a value!");
+            }else{
+                var Area = Math.PI * r * r;
+            }
+            document.getElementById('result').innerHTML = "<b>Area: </b>" + Area;
+        };
+        
+
+        
+    </script>
+</body>
+</html>

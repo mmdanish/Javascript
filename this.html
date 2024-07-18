@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="fullname"></p>
+
+    <script>
+        // let person = {
+        //     firstName: "Mohammed",
+        //     lastName: "Danish",
+        //     id: 2256,
+        //     fullName: function() {
+        //         return this.firstName + " " + this.lastName;
+        //     }
+        // };
+
+        // document.getElementById('fullname').innerHTML = person.fullName();
+
+        // call() method
+        // const person = {
+        //     fullName: function() {
+        //         return this.firstName + " " + this.lastName;
+        //     }
+        // };
+
+        const person1 = {
+            firstName: "Favas",
+            lastName: "UP"
+        };
+
+        const person2 = {
+            firstName: "Ashil",
+            lastName: "Rahim"
+        };
+
+        // document.getElementById("fullname").innerHTML = person.fullName.call(person1) + ", " + person.fullName.call(person2);
+
+
+        // call() method with Arguments
+        // const person = {
+        //     fullName: function(city, country) {
+        //         return this.firstName + " " + this.lastName + ", " + city + ", " + country;
+        //     }
+        // };
+
+        // document.getElementById("fullname").innerHTML = person.fullName.call(person1, "Kerala", "India");
+
+        // apply() method
+        // const person = {
+        //     fullName: function(city, country) {
+        //         return this.firstName + " " + this.lastName;
+        //     }
+        // };
+
+        // document.getElementById("fullname").innerHTML = person.fullName.apply(person2)
+
+        // apply() method with Arguments
+        // document.getElementById("fullname").innerHTML = person.fullName.apply(person2, ["Oslo", "Norway"]);
+
+        // bind() method
+        const person = {
+            firstName: "Mohammed",
+            lastName: "Danish",
+            fullName: function() {
+                return this.firstName + " " + this.lastName;
+            }
+        };
+
+        const member = {
+            firstName: "John",
+            lastName: "Doe"
+        };
+
+        let fullName = person.fullName.bind(member);
+
+        document.getElementById("fullname").innerHTML = fullName();
+ 
+    </script>
+</body>
+</html>
